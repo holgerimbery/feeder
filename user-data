@@ -2,33 +2,28 @@
 # vim: syntax=yaml
 #
 
-# The current version of cloud-init in the Hypriot rpi-64 is 0.7.6
-# When dealing with cloud-init, it is SUPER important to know the version
-# I have wasted many hours creating servers to find out the module I was trying to use wasn't in the cloud-init version I had
-# Documentation: http://cloudinit.readthedocs.io/en/0.7.9/index.html
-
 # Set your hostname here, the manage_etc_hosts will update the hosts file entries as well
-hostname: black-pearl
+hostname: feeder
 manage_etc_hosts: true
 
 # You could modify this for your own user information
 users:
-  - name: pirate
-    gecos: "Hypriot Pirate"
+  - name: feeder
+    gecos: "feeder admin"
     sudo: ALL=(ALL) NOPASSWD:ALL
     shell: /bin/bash
     groups: users,docker,video,input
-    plain_text_passwd: hypriot
+    plain_text_passwd: raspberry
     lock_passwd: false
     ssh_pwauth: true
     chpasswd: { expire: false }
 
 # # Set the locale of the system
-# locale: "en_US.UTF-8"
+locale: "de_DE.UTF-8"
 
 # # Set the timezone
 # # Value of 'timezone' must exist in /usr/share/zoneinfo
-# timezone: "America/Los_Angeles"
+timezone: "europe/berlin"
 
 # # Update apt packages on first boot
 # package_update: true
@@ -69,6 +64,6 @@ runcmd:
   - 'systemctl restart avahi-daemon'
   # install GUI
   - 'docker volume create portainer_data'
-  - 'docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer'
+  - 'docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer --templates https://raw.githubusercontent.com/holgerimbery/feeder/master/templates.json -H unix:///var/run/docker.sock'
 #  # Activate WiFi interface
 #  - 'ifup wlan0'
