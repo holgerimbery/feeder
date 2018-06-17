@@ -26,6 +26,6 @@ Weitere Funktionen können Template gesteuert über das *App Template* Menü von
 [Die Dokumentation in Deutsch und Englisch wird über die wiki-Seiten zur Verfügung gestellt](https://github.com/holgerimbery/feeder/wiki)
 
 ## Security
-feeder does not modify hypriot-os or portainer.io. Feeder installs portainer.io as a GUI to hypriot-os via cloud-init (see user-data file) and make use of a own app template set () to deploy addons to hypriot-os. Both files are available as plain-text files. Some add-ons will use custom created docker container, please find there source within the linked git-repro of the respective container.
+feeder does not modify hypriot-os or portainer.io. Feeder installs portainer.io as a GUI to hypriot-os via cloud-init (see user-data file) and make use of a own app template set [templates.json](https://raw.githubusercontent.com/holgerimbery/feeder/master/templates.json) to deploy addons to hypriot-os. Both files are available as plain-text files. Some add-ons will use custom created docker container, please find there source within the linked git-repro of the respective container.
 
 
