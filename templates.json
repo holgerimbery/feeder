@@ -5,7 +5,7 @@
     "description": "a flow-based development tool for the internet of things",
     "categories": ["feeder"],
     "platform": "linux",
-    "network": "host"
+    "network": "host",
     "logo": "https://nodered.org/about/resources/media/node-red-icon-2.png",
     "image": "nodered/node-red-docker:rpi",
     "ports": [,
