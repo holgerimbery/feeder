@@ -35,10 +35,17 @@
     ],
     "volumes": [    
      {
-      "container": "/mqtt",
-      "bind": "/home/feeder/config/mosquitto"
-    }
-    
+      "container": "/mqtt/config",
+      "bind": "/home/feeder/config/mosquitto/config"
+    },
+    {
+      "container": "/mqtt/log",
+      "bind": "/home/feeder/config/mosquitto/log"
+    },     
+    {
+      "container": "/mqtt/config/data",
+      "bind": "/home/feeder/config/mosquitto/data"
+    } 
   ]
   },
     {
