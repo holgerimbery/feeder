@@ -64,6 +64,6 @@ runcmd:
   - 'systemctl restart avahi-daemon'
   # install GUI
   - 'docker volume create portainer_data'
-  - 'docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer --logo https://github.com/holgerimbery/feeder/raw/master/feeder.png --templates https://raw.githubusercontent.com/holgerimbery/feeder/master/templates.json --host unix:///var/run/docker.sock'
+  - 'docker run -d --name portainer -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer --templates https://raw.githubusercontent.com/holgerimbery/feeder/master/templates.json --host unix:///var/run/docker.sock'
 #  # Activate WiFi interface
 #  - 'ifup wlan0'
