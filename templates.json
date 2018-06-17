@@ -136,6 +136,19 @@
 			}
 
 		]
-	}
+	},
+ {
+  "type": "stack",
+  "title": "feeder",
+  "description": "feeder cluster",
+  "note": "feeder cluster, please refer to <a href=\"https://github.com/holgerimbery/feeder\" target=\"_blank\">feeder documentation</a> for production deployments.",
+  "categories": ["feeder"],
+  "platform": "linux",
+  "logo": "https://",
+  "repository": {
+    "url": "https://github.com/holgerimbery/feeder",
+    "stackfile": "stacks/feeder-docker-stack.yml"
+  }
+}
 
 ]
