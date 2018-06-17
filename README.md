@@ -13,7 +13,7 @@ feeders default is a ethernet connection with dhcp. default username/password: f
 
 2nd day deployment is template driven, you can pick and select features to install within portainers *App Template* menu. 
 [Documentation in English and German can be found in the wiki pages](https://github.com/holgerimbery/feeder/wiki)
-### feeder is also available in swarm mode 
+#### feeder is also available in swarm mode to distribute services over more than one raspberrypi
 
 ## Deutsch: 
 *feeder (Versorger - kleines Schiff zum Containertransport)* ist eine IoT Appliance mit MQTT broker, controller, analytics, monitoring und docker Administration basierend auf der aktuellen hypriot-os Version sowie auf portainer.io Management
