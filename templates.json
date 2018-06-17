@@ -5,6 +5,7 @@
     "description": "a flow-based development tool for the internet of things",
     "categories": ["feeder"],
     "platform": "linux",
+    "network": "host",
     "logo": "https://nodered.org/about/resources/media/node-red-icon-2.png",
     "image": "nodered/node-red-docker:rpi",
     "ports": [
@@ -18,6 +19,7 @@
     "description": "a mqtt broker for the internet of things",
     "categories": ["feeder"],
     "platform": "linux",
+    "network": "host",
     "logo": "https://mosquitto.org/images/mosquitto-text-side-28.png",
     "image": "holgerimbery/docker_mosquitto:latest",
     "ports": [
