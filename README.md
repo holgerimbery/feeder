@@ -1,5 +1,7 @@
 # feeder
 # work in progress
+documentation and template set still incomplete
+
 ## English
 *feeder (small container ship)* is an IoT Appliance with MQTT broker, controller, analytics, monitoring and docker administration based on
 the latest hypriot-os and portainer.io container management.
