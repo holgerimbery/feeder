@@ -1,6 +1,5 @@
 # feeder
-# work in progress
-documentation & wiki still incomplete - image with feeder customization and add-ons working 
+
 
 ## English
 *feeder (small container ship)* is an IoT Appliance with MQTT broker, controller, analytics, monitoring and docker administration based on
