@@ -19,7 +19,7 @@
     "categories": ["feeder"],
     "platform": "linux",
     "logo": "https://mosquitto.org/images/mosquitto-text-side-28.png",
-    "image": "holgerimbery/mosquitto:latest",
+    "image": "holgerimbery/docker_mosquitto:latest",
     "ports": [
       "1883",
       "9001"
