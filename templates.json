@@ -98,6 +98,7 @@
 	{
 		"type": "container",
 		"title": "telegraf",
+		"name": "telegraf",
 		"description": "collecting and reporting agent",
 		"categories": ["feeder"],
 		"platform": "linux",
@@ -109,11 +110,17 @@
 			"8094",
 			"8125"
 		],
-		"volumes": ["/etc/telegraf"]
+		"volumes": [{
+				"container": "/etc/telegraf/telegraf.conf",
+				"bind": "/home/feeder/config/telegraf/telegraf.conf"
+			}
+
+		]
 	},
 	{
 		"type": "container",
 		"title": "chronograf",
+		"name": "chronograf",
 		"description": "graphical interface to influxdb, telegraf, kapacitor",
 		"categories": ["feeder"],
 		"platform": "linux",
@@ -123,7 +130,12 @@
 		"ports": [
 			"8888"
 		],
-		"volumes": ["/var/lib/chronograf"]
+		"volumes": [{
+				"container": "/var/lib/chronograf",
+				"bind": "/home/feeder/config/chronograf"
+			}
+
+		]
 	}
 
 ]
