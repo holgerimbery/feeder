@@ -25,6 +25,7 @@ Standartmässig ist feeder auf dhcp via ethernet eingestellt. Standard Benutzern
 
 Weitere Funktionen können Template gesteuert über das *App Template* Menü von Portainer nach installiert werden.
 [Die Dokumentation in Deutsch und Englisch wird über die wiki-Seiten zur Verfügung gestellt](https://github.com/holgerimbery/feeder/wiki)
+#### feeder kann auch im swarm mode installiert werden um Services über mehrere RaspberryPis zu verteilen
 
 ## Security
 feeder does not modify hypriot-os or portainer.io. Feeder installs portainer.io as a GUI to hypriot-os via cloud-init - [user-data](https://raw.githubusercontent.com/holgerimbery/feeder/master/user-data.yml) - and make use of a own app template set - [templates.json](https://raw.githubusercontent.com/holgerimbery/feeder/master/templates.json) - to deploy addons to hypriot-os. Both files are available as plain-text files. Some add-ons will use custom created docker container, please find there source within the linked git-repro of the respective container.
