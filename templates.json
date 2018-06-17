@@ -35,7 +35,7 @@
     "categories": ["feeder"],
     "platform": "linux",
     "network": "host",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Influxdb_logo.svg",
+    "logo": "https://influxdata.github.io/branding/img/downloads/influx-logo-complete--preview.svg",
     "image": "library/influxdb",
     "ports": [
       "8083",
@@ -43,6 +43,51 @@
       "2003"
     ],
     "volumes": ["/var/lib/influxdb"]
+  },    
+    {
+    "type": "container",
+    "title": "kapacitor",
+    "description": "a Real-time Streaming Data Processing Engine",
+    "categories": ["feeder"],
+    "platform": "linux",
+    "network": "host",
+    "logo": "https://influxdata.github.io/branding/img/downloads/influx-logo-complete--preview.svg",
+    "image": "library/kapacitor",
+    "ports": [
+      "9092"
+    ],
+    "volumes": ["/var/lib/kapacitor"],
+    "command": "kapacitord"
+  },
+    {
+    "type": "container",
+    "title": "telegraf",
+    "description": "collecting and reporting agent",
+    "categories": ["feeder"],
+    "platform": "linux",
+    "network": "host",
+    "logo": "https://influxdata.github.io/branding/img/downloads/influx-logo-complete--preview.svg",
+    "image": "library/telegraf",
+    "ports": [
+      "8092",
+      "8094",
+      "8125"
+    ],
+    "volumes": ["/etc/telegraf"]
+  },
+    {
+    "type": "container",
+    "title": "chronograf",
+    "description": "graphical interface to influxdb, telegraf, kapacitor",
+    "categories": ["feeder"],
+    "platform": "linux",
+    "network": "host",
+    "logo": "https://influxdata.github.io/branding/img/downloads/influx-logo-complete--preview.svg",
+    "image": "library/chronograf",
+    "ports": [
+      "8888"
+    ],
+    "volumes": ["/var/lib/chronograf"]
   }
   
 ]
