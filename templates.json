@@ -22,6 +22,7 @@
     {
     "type": "container",
     "title": "mosquitto",
+    "name": "mosquitto",
     "description": "a mqtt broker for the internet of things",
     "categories": ["feeder"],
     "platform": "linux",
@@ -32,7 +33,13 @@
       "1883",
       "9001"
     ],
-    "volumes": ["/mqtt"]
+    "volumes": [    
+     {
+      "container": "/mqtt",
+      "bind": "/home/feeder/config/mosquitto"
+    }
+    
+  ]
   },
     {
     "type": "container",
