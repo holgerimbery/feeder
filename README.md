@@ -10,7 +10,7 @@ You are able to modify username, password, wlan access (activation, ssid, creden
 feeders default is a ethernet connection with dhcp. default username/password: feeder/raspberry, portainer credentials are generated after the installation.
 
 2nd day deployment is template driven, you can pick and select features to install within portainers *App Template* menu. 
-Documentation in English and German can be found in the wiki pages
+[Documentation in English and German can be found in the wiki pages](https://github.com/holgerimbery/feeder/wiki)
 
 
 ## Deutsch: 
@@ -22,4 +22,4 @@ Vor dem ersten Start können Benutzername, Passwort, WLan Zugangsdaten (Aktivier
 Standartmässig ist feeder auf dhcp via ethernet eingestellt. Standard Benutzername/Password: feeder/raspberry, die Zugangsdaten für portainer können nach der Installation festgelegt werden.
 
 Weitere Funktionen können Template gesteuert über das *App Template* Menü von Portainer nach installiert werden.
-Die Dokumentation in Deutsch und Englisch wird über die wiki-Seiten zur Verfügung gestellt.
+[Die Dokumentation in Deutsch und Englisch wird über die wiki-Seiten zur Verfügung gestellt](https://github.com/holgerimbery/feeder/wiki)
