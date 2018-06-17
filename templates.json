@@ -11,7 +11,12 @@
     "ports": [
       "1880"
     ],
-    "volumes": ["/data"]
+    "volumes": [
+    {
+      "container": "/data",
+      "bind": "/home/feeder/config/node-red"
+    }
+  ]
   },
     {
     "type": "container",
