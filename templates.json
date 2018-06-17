@@ -1,113 +1,120 @@
-[
-  {
-    "type": "container",
-    "title": "NodeRed",
-    "name": "NodeRed",
-    "description": "a flow-based development tool for the internet of things",
-    "categories": ["feeder"],
-    "platform": "linux",
-    "network": "host",
-    "logo": "https://nodered.org/about/resources/media/node-red-icon-2.png",
-    "image": "nodered/node-red-docker:rpi",
-    "ports": [
-      "1880"
-    ],
-    "volumes": [
-    {
-      "container": "/data",
-      "bind": "/home/feeder/config/node-red"
-    }
-  ]
-  },
-    {
-    "type": "container",
-    "title": "mosquitto",
-    "name": "mosquitto",
-    "description": "a mqtt broker for the internet of things",
-    "categories": ["feeder"],
-    "platform": "linux",
-    "network": "host",
-    "logo": "https://mosquitto.org/images/mosquitto-text-side-28.png",
-    "image": "holgerimbery/docker_mosquitto:latest",
-    "ports": [
-      "1883",
-      "9001"
-    ],
-    "volumes": [    
-     {
-      "container": "/mqtt/config",
-      "bind": "/home/feeder/config/mosquitto/config"
-    },
-    {
-      "container": "/mqtt/log",
-      "bind": "/home/feeder/config/mosquitto/log"
-    },     
-    {
-      "container": "/mqtt/config/data",
-      "bind": "/home/feeder/config/mosquitto/data"
-    } 
-  ]
-  },
-    {
-    "type": "container",
-    "title": "influxdb",
-    "description": "a timebased database for the internet of things",
-    "categories": ["feeder"],
-    "platform": "linux",
-    "network": "host",
-    "logo": "https://influxdata.github.io/branding/img/downloads/influx-logo-complete--preview.svg",
-    "image": "library/influxdb",
-    "ports": [
-      "8083",
-      "8086",
-      "2003"
-    ],
-    "volumes": ["/var/lib/influxdb"]
-  },    
-    {
-    "type": "container",
-    "title": "kapacitor",
-    "description": "a Real-time Streaming Data Processing Engine",
-    "categories": ["feeder"],
-    "platform": "linux",
-    "network": "host",
-    "logo": "https://influxdata.github.io/branding/img/downloads/influx-logo-complete--preview.svg",
-    "image": "library/kapacitor",
-    "ports": [
-      "9092"
-    ],
-    "volumes": ["/var/lib/kapacitor"],
-    "command": "kapacitord"
-  },
-    {
-    "type": "container",
-    "title": "telegraf",
-    "description": "collecting and reporting agent",
-    "categories": ["feeder"],
-    "platform": "linux",
-    "network": "host",
-    "logo": "https://influxdata.github.io/branding/img/downloads/influx-logo-complete--preview.svg",
-    "image": "library/telegraf",
-    "ports": [
-      "8092",
-      "8094",
-      "8125"
-    ],
-    "volumes": ["/etc/telegraf"]
-  },
-    {
-    "type": "container",
-    "title": "chronograf",
-    "description": "graphical interface to influxdb, telegraf, kapacitor",
-    "categories": ["feeder"],
-    "platform": "linux",
-    "network": "host",
-    "logo": "https://influxdata.github.io/branding/img/downloads/influx-logo-complete--preview.svg",
-    "image": "library/chronograf",
-    "ports": [
-      "8888"
-    ],
-    "volumes": ["/var/lib/chronograf"]
-  }
-  
+[{
+		"type": "container",
+		"title": "NodeRed",
+		"name": "NodeRed",
+		"description": "a flow-based development tool for the internet of things",
+		"categories": ["feeder"],
+		"platform": "linux",
+		"network": "host",
+		"logo": "https://nodered.org/about/resources/media/node-red-icon-2.png",
+		"image": "nodered/node-red-docker:rpi",
+		"ports": [
+			"1880"
+		],
+		"volumes": [{
+			"container": "/data",
+			"bind": "/home/feeder/config/node-red"
+		}]
+	},
+	{
+		"type": "container",
+		"title": "mosquitto",
+		"name": "mosquitto",
+		"description": "a mqtt broker for the internet of things",
+		"categories": ["feeder"],
+		"platform": "linux",
+		"network": "host",
+		"logo": "https://mosquitto.org/images/mosquitto-text-side-28.png",
+		"image": "holgerimbery/docker_mosquitto:latest",
+		"ports": [
+			"1883",
+			"9001"
+		],
+		"volumes": [{
+				"container": "/mqtt/config",
+				"bind": "/home/feeder/config/mosquitto/config"
+			},
+			{
+				"container": "/mqtt/log",
+				"bind": "/home/feeder/config/mosquitto/log"
+			},
+			{
+				"container": "/mqtt/config/data",
+				"bind": "/home/feeder/config/mosquitto/data"
+			}
+		]
+	},
+	{
+		"type": "container",
+		"title": "influxdb",
+		"name": "influxdb",
+		"description": "a timebased database for the internet of things",
+		"categories": ["feeder"],
+		"platform": "linux",
+		"network": "host",
+		"logo": "https://influxdata.github.io/branding/img/downloads/influx-logo-complete--preview.svg",
+		"image": "library/influxdb",
+		"ports": [
+			"8083",
+			"8086",
+			"2003"
+		],
+		"volumes": [{
+				"container": "/var/lib/influxdb",
+				"bind": "/home/feeder/config/influxdb/db"
+			},
+			{
+				"container": "/etc/influxdb/influxdb.conf",
+				"bind": "/home/feeder/config/influxdb/config/influxdb.conf"
+			}
+		],
+		"command": "influxd -config /etc/influxdb/influxdb.conf"
+
+	},
+	{
+		"type": "container",
+		"title": "kapacitor",
+		"description": "a Real-time Streaming Data Processing Engine",
+		"categories": ["feeder"],
+		"platform": "linux",
+		"network": "host",
+		"logo": "https://influxdata.github.io/branding/img/downloads/influx-logo-complete--preview.svg",
+		"image": "library/kapacitor",
+		"ports": [
+			"9092"
+		],
+		"volumes": ["/var/lib/kapacitor"],
+		"command": "kapacitord"
+	},
+	{
+		"type": "container",
+		"title": "telegraf",
+		"description": "collecting and reporting agent",
+		"categories": ["feeder"],
+		"platform": "linux",
+		"network": "host",
+		"logo": "https://influxdata.github.io/branding/img/downloads/influx-logo-complete--preview.svg",
+		"image": "library/telegraf",
+		"ports": [
+			"8092",
+			"8094",
+			"8125"
+		],
+		"volumes": ["/etc/telegraf"]
+	},
+	{
+		"type": "container",
+		"title": "chronograf",
+		"description": "graphical interface to influxdb, telegraf, kapacitor",
+		"categories": ["feeder"],
+		"platform": "linux",
+		"network": "host",
+		"logo": "https://influxdata.github.io/branding/img/downloads/influx-logo-complete--preview.svg",
+		"image": "library/chronograf",
+		"ports": [
+			"8888"
+		],
+		"volumes": ["/var/lib/chronograf"]
+	}
+
 ]
