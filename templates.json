@@ -2,6 +2,7 @@
   {
     "type": "container",
     "title": "NodeRed",
+    "name": "NodeRed",
     "description": "a flow-based development tool for the internet of things",
     "categories": ["feeder"],
     "platform": "linux",
