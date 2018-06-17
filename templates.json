@@ -1,15 +1,15 @@
 [
   {
     "type": "container",
-    "title": "Registry",
-    "description": "Docker image registry",
-    "categories": ["docker"],
+    "title": "NodeRed",
+    "description": "a flow-based development tool for the internet of things",
+    "categories": ["feeder"],
     "platform": "linux",
     "logo": "https://portainer.io/images/logos/registry.png",
-    "image": "registry:latest",
+    "image": "nodered/node-red-docker:rpi",
     "ports": [
-      "5000/tcp"
+      "1880"
     ],
-    "volumes": ["/var/lib/registry"]
-  }
+    "volumes": ["/data"]
+  }  
 ]
