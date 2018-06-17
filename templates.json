@@ -27,5 +27,22 @@
       "9001"
     ],
     "volumes": ["/mqtt"]
+  },
+    {
+    "type": "container",
+    "title": "influxdb",
+    "description": "a timebased database for the internet of things",
+    "categories": ["feeder"],
+    "platform": "linux",
+    "network": "host",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Influxdb_logo.svg",
+    "image": "library/influxdb",
+    "ports": [
+      "8083",
+      "8086",
+      "2003"
+    ],
+    "volumes": ["/var/lib/influxdb"]
   }
+  
 ]
