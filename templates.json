@@ -74,6 +74,7 @@
 	{
 		"type": "container",
 		"title": "kapacitor",
+		"name": "kapacitor",
 		"description": "a Real-time Streaming Data Processing Engine",
 		"categories": ["feeder"],
 		"platform": "linux",
@@ -83,7 +84,15 @@
 		"ports": [
 			"9092"
 		],
-		"volumes": ["/var/lib/kapacitor"],
+		"volumes": [{
+				"container": "/var/lib/kapacitor",
+				"bind": "/home/feeder/config/kapacitor/data"
+			},
+			{
+				"container": "/etc/kapacitor/",
+				"bind": "/home/feeder/config/kapacitor/config"
+			}
+		],
 		"command": "kapacitord"
 	},
 	{
