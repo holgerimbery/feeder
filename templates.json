@@ -11,5 +11,19 @@
       "1880"
     ],
     "volumes": ["/data"]
-  }  
+  },
+    {
+    "type": "container",
+    "title": "mosquitto",
+    "description": "a mqtt broker for the internet of things",
+    "categories": ["feeder"],
+    "platform": "linux",
+    "logo": "https://portainer.io/images/logos/registry.png",
+    "image": "holgerimbery/mosquitto:latest",
+    "ports": [
+      "1883",
+      "9001"
+    ],
+    "volumes": ["/mqtt"]
+  },
 ]
