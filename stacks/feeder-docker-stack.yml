@@ -20,9 +20,9 @@ services:
   mosquitto:
     image: holgerimbery/docker_mosquitto
     volumes:
-     - /srv/nfs/config/mqtt/data:/mqtt/data
-     - /srv/nfs/config/mqtt/config:/mqtt/config
-     - /srv/nfs/config/mqtt/log:/mqtt/log
+     - /srv/nfs/config/mqtt/data:/mosquitto/data
+     - /srv/nfs/config/mqtt/config:/mosquitto/config
+     - /srv/nfs/config/mqtt/log:/mosquitto/log
      - /etc/localtime:/etc/localtime:ro
     deploy:
             mode: replicated
