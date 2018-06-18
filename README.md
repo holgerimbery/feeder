@@ -34,3 +34,12 @@ feeder does not modify hypriot-os or portainer.io. Feeder installs portainer.io 
 installation described in [wiki](https://github.com/holgerimbery/feeder/wiki/installation-swarm-mode---feeder-on-a-raspberrypi-cluster)
 
 ![swarm](https://github.com/holgerimbery/feeder/raw/master/pictures/swarm_success.png)
+
+## example: deployment of container via template with one click
+
+![container](https://github.com/holgerimbery/feeder/raw/master/pictures/container.png)
+
+## example: deployment of a stack (set of containers) to a swarm with one click
+
+![stack](https://github.com/holgerimbery/feeder/raw/master/pictures/stack.png)
+
