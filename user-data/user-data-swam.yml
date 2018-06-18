@@ -33,7 +33,7 @@ package_upgrade: false
 
 # # Install any additional apt packages you need here
 # packages:
-#  - ntp
+# - ntp
 
 # # WiFi connect to HotSpot
 # # - use `wpa_passphrase SSID PASSWORD` to encrypt the psk
