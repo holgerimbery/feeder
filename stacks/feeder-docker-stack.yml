@@ -2,7 +2,7 @@ version: '3'
 services:
 
   node-red:
-    image: mynodered:rpi
+    image: nodered/node-red-docker:rpi
     ports:
      - 1880:1880
     volumes:
