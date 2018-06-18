@@ -30,4 +30,7 @@ Weitere Funktionen können Template gesteuert über das *App Template* Menü von
 ## Security
 feeder does not modify hypriot-os or portainer.io. Feeder installs portainer.io as a GUI to hypriot-os via cloud-init - [user-data](https://raw.githubusercontent.com/holgerimbery/feeder/master/user-data.yml) - and make use of a own app template set - [templates.json](https://raw.githubusercontent.com/holgerimbery/feeder/master/templates.json) - to deploy addons to hypriot-os. Both files are available as plain-text files. Some add-ons will use custom created docker container, please find there source within the linked git-repro of the respective container.
 
+## example: feeder installed on a swam of two raspberrypi 3 
+installation described in [wiki](https://github.com/holgerimbery/feeder/wiki/installation-swarm-mode---feeder-on-a-raspberrypi-cluster)
 
+![swarm](https://github.com/holgerimbery/feeder/raw/master/pictures/swarm_success.png)
