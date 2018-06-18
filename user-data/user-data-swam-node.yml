@@ -64,4 +64,4 @@ runcmd:
   - 'systemctl restart avahi-daemon'
   # initialize swarm
   - 'sleep 10'
-  - 'docker swarm join --token tokentokentokentokentokentokentokentokentokentokentokentokentokentokentoken xxx.xxx.xxx.xxx:2377'
+  # - 'docker swarm join --token tokentokentokentokentokentokentokentokentokentokentokentokentokentokentoken xxx.xxx.xxx.xxx:2377'
