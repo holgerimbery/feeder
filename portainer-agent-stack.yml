@@ -30,6 +30,7 @@ services:
       placement:
         constraints: [node.role == manager]
     command: "-H tcp://tasks.agent:9001 --tlsskipverify --templates https://raw.githubusercontent.com/holgerimbery/feeder/master/templates.json"
+
 networks:
   agent_network:
     driver: overlay
