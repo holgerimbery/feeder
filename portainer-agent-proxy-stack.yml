@@ -27,12 +27,12 @@ services:
       placement:
         constraints: [node.role == manager]
 
-  # Let's Encrypt Companion
   letsencrypt-companion:
     image: ahaurw01/docker-flow-letsencrypt:armhf
     networks:
       - agent_network
     environment:
+      # change to meet your requirements
       - DOMAIN_1=('host1.domain.tdl')
       - DOMAIN_2=('host2.domain.tdl')
       - CERTBOT_EMAIL=name@domain.tdl
@@ -47,6 +47,7 @@ services:
         - com.df.distribute=true
         - com.df.port=80
       placement:
+        # change to meet node.id
         constraints: [node.id == 4u7pwq2psn43hrfzp81xo0v6l]
       replicas: 1
 
@@ -82,6 +83,7 @@ services:
       labels:
         - com.df.notify=true
         - com.df.distribute=true
+        # change to meet your requirements
         - com.df.serviceDomain=host1.domain.tdl
         - com.df.httpsOnly=true
         - com.df.reqPathSearch=/portainer
