@@ -1,0 +1,98 @@
+version: '3'
+
+services:
+  proxy:
+    image: ahaurw01/docker-flow-proxy:armhf
+    ports:
+      - 80:80
+      - 443:443
+    networks:
+      - agent_network
+    environment:
+      - LISTENER_ADDRESS=swarm-listener
+      - MODE=swarm
+    deploy:
+      replicas: 2
+
+  swarm-listener:
+    image: ahaurw01/docker-flow-swarm-listener:armhf
+    networks:
+      - agent_network
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - DF_NOTIFY_CREATE_SERVICE_URL=http://proxy:8080/v1/docker-flow-proxy/reconfigure
+      - DF_NOTIFY_REMOVE_SERVICE_URL=http://proxy:8080/v1/docker-flow-proxy/remove
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+
+  # Let's Encrypt Companion
+  letsencrypt-companion:
+    image: ahaurw01/docker-flow-letsencrypt:armhf
+    networks:
+      - agent_network
+    environment:
+      - DOMAIN_1=('host1.domain.tdl')
+      - DOMAIN_2=('host2.domain.tdl')
+      - CERTBOT_EMAIL=name@domain.tdl
+      - PROXY_ADDRESS=proxy
+      - CERTBOT_CRON_RENEW=('0 3 * * *' '0 15 * * *')
+    volumes:
+          - /srv/nfs/config/docker-flow-proxy/etc/letsencrypt:/etc/letsencrypt
+    deploy:
+      labels:
+        - com.df.servicePath=/.well-known/acme-challenge
+        - com.df.notify=true
+        - com.df.distribute=true
+        - com.df.port=80
+      placement:
+        constraints: [node.id == 4u7pwq2psn43hrfzp81xo0v6l]
+      replicas: 1
+
+
+  agent:
+    image: portainer/agent
+    environment:
+      # REQUIRED: Should be equal to the service name prefixed by "tasks." when
+      # deployed inside an overlay network
+      AGENT_CLUSTER_ADDR: tasks.agent
+      # AGENT_PORT: 9001
+      # LOG_LEVEL: debug
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - agent_network
+    deploy:
+      mode: global
+
+  portainer:
+    image: portainer/portainer
+    ports:
+      - "9000:9000"
+    volumes:
+      - portainer_data:/data
+    networks:
+      - agent_network
+    deploy:
+      mode: replicated
+      replicas: 1
+      placement:
+        constraints: [node.role == manager]
+      labels:
+        - com.df.notify=true
+        - com.df.distribute=true
+        - com.df.serviceDomain=host1.domain.tdl
+        - com.df.httpsOnly=true
+        - com.df.reqPathSearch=/portainer
+        - com.df.port=9000
+    command: "-H tcp://tasks.agent:9001 --tlsskipverify --templates https://raw.githubusercontent.com/holgerimbery/feeder/master/templates.json"
+
+
+
+networks:
+  agent_network:
+    driver: overlay
+
+volumes:
+  portainer_data:
