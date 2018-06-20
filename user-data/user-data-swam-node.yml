@@ -32,7 +32,7 @@ package_upgrade: true
 # package_upgrade: false
 
 # # Install any additional apt packages you need here
- packages:
+packages:
   - nfs-common 
   - rpcbind
 
