@@ -67,6 +67,7 @@ runcmd:
   # initialize swarm
   - 'sleep 10'
   - 'mkdir /srv/nfs'
+  - 'chown nobody:nogroup /srv/nfs'
   - 'docker swarm init > /srv/nfs/swarm_attach.txt'
   # install GUI
   - 'curl -L https://raw.githubusercontent.com/holgerimbery/feeder/master/portainer-agent-proxy-stack.yml -o /srv/nfs/portainer-agent-stack.yml'
