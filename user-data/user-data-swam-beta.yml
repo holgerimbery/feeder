@@ -71,6 +71,6 @@ runcmd:
   - 'docker swarm init > /srv/nfs/swarm_attach.txt'
   # install GUI
   - 'curl -L https://raw.githubusercontent.com/holgerimbery/feeder/master/portainer-agent-stack.yml -o /srv/nfs/portainer-agent-stack.yml'
-  - docker stack deploy --compose-file=/srv/nfs/portainer-agent-stack.yml portainer
+  - 'docker stack deploy --compose-file=/srv/nfs/portainer-agent-stack-beta.yml portainer'
  #  # Activate WiFi interface
 #  - 'ifup wlan0'
