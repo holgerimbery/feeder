@@ -26,14 +26,16 @@ users:
 timezone: "europe/berlin"
 
 # # Update apt packages on first boot
-# package_update: true
-# package_upgrade: true
+package_update: true
+package_upgrade: true
 # package_reboot_if_required: true
-package_upgrade: false
+# package_upgrade: false
 
 # # Install any additional apt packages you need here
-# packages:
-# - ntp
+packages:
+ - nfs-kernel-server
+ - nfs-common
+ - rpcbind
 
 # # WiFi connect to HotSpot
 # # - use `wpa_passphrase SSID PASSWORD` to encrypt the psk
