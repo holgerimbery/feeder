@@ -26,14 +26,15 @@ users:
 timezone: "europe/berlin"
 
 # # Update apt packages on first boot
-# package_update: true
-# package_upgrade: true
+package_update: true
+package_upgrade: true
 # package_reboot_if_required: true
-package_upgrade: false
+# package_upgrade: false
 
 # # Install any additional apt packages you need here
-# packages:
-#  - ntp
+ packages:
+  - nfs-common 
+  - rpcbind
 
 # # WiFi connect to HotSpot
 # # - use `wpa_passphrase SSID PASSWORD` to encrypt the psk
@@ -64,4 +65,6 @@ runcmd:
   - 'systemctl restart avahi-daemon'
   # initialize swarm
   - 'sleep 10'
+  - 'mkdir /srv/nfs'
+  - 'chown nobody:nogroup /srv/nfs'
   # - 'docker swarm join --token tokentokentokentokentokentokentokentokentokentokentokentokentokentokentoken xxx.xxx.xxx.xxx:2377'
