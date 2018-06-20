@@ -2,7 +2,7 @@ version: '3'
 services:
 
   node-red:
-    image: raymondmm/node-red
+    image: nodered/node-red-docker:rpi-v8
     ports:
      - 1880:1880
     volumes:
