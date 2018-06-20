@@ -66,9 +66,10 @@ runcmd:
   - 'systemctl restart avahi-daemon'
   # initialize swarm
   - 'sleep 10'
-  - 'docker swarm init > /home/feeder/swarm_attach.txt'
+  - 'mkdir /srv/nfs'
+  - 'docker swarm init > /srv/nfs/swarm_attach.txt'
   # install GUI
-  - 'curl -L https://raw.githubusercontent.com/holgerimbery/feeder/master/portainer-agent-proxy-stack.yml -o /home/feeder/portainer-agent-stack.yml'
-  - 'echo "docker stack deploy --compose-file=/home/feeder/portainer-agent-stack.yml portainer" > /srv/nfs/deploy.txt'
+  - 'curl -L https://raw.githubusercontent.com/holgerimbery/feeder/master/portainer-agent-proxy-stack.yml -o /srv/nfs/portainer-agent-stack.yml'
+  - docker stack deploy --compose-file=/srv/nfs/portainer-agent-stack.yml portainer
  #  # Activate WiFi interface
 #  - 'ifup wlan0'
