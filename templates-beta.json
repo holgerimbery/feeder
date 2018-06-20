@@ -22,12 +22,11 @@
 		"description": "a mqtt broker for the internet of things",
 		"categories": ["feeder"],
 		"platform": "linux",
-		"network": "host",
 		"logo": "https://mosquitto.org/images/mosquitto-text-side-28.png",
 		"image": "holgerimbery/docker_mosquitto:latest",
 		"ports": [
-			"1883",
-			"9001"
+			"1883/tcp",
+			"9001/tcp"
 		],
 		"volumes": [{
 				"container": "/mqtt/config",
@@ -50,13 +49,12 @@
 		"description": "a timebased database for the internet of things",
 		"categories": ["feeder"],
 		"platform": "linux",
-		"network": "host",
 		"logo": "https://influxdata.github.io/branding/img/downloads/influx-logo-complete--preview.svg",
 		"image": "library/influxdb",
 		"ports": [
-			"8083",
-			"8086",
-			"2003"
+			"8083/tcp",
+			"8086/tcp",
+			"2003/tcp"
 		],
 		"volumes": [{
 				"container": "/var/lib/influxdb",
@@ -77,11 +75,10 @@
 		"description": "a Real-time Streaming Data Processing Engine",
 		"categories": ["feeder"],
 		"platform": "linux",
-		"network": "host",
 		"logo": "https://influxdata.github.io/branding/img/downloads/influx-logo-complete--preview.svg",
 		"image": "library/kapacitor",
 		"ports": [
-			"9092"
+			"9092/tcp"
 		],
 		"volumes": [{
 				"container": "/var/lib/kapacitor",
@@ -101,13 +98,12 @@
 		"description": "collecting and reporting agent",
 		"categories": ["feeder"],
 		"platform": "linux",
-		"network": "host",
 		"logo": "https://influxdata.github.io/branding/img/downloads/influx-logo-complete--preview.svg",
 		"image": "library/telegraf",
 		"ports": [
-			"8092",
-			"8094",
-			"8125"
+			"8092/tcp",
+			"8094/tcp",
+			"8125/tcp"
 		],
 		"volumes": [{
 				"container": "/etc/telegraf/telegraf.conf",
@@ -123,11 +119,10 @@
 		"description": "graphical interface to influxdb, telegraf, kapacitor",
 		"categories": ["feeder"],
 		"platform": "linux",
-		"network": "host",
 		"logo": "https://influxdata.github.io/branding/img/downloads/influx-logo-complete--preview.svg",
 		"image": "library/chronograf",
 		"ports": [
-			"8888"
+			"8888/tcp"
 		],
 		"volumes": [{
 				"container": "/var/lib/chronograf",
