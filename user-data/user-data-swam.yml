@@ -26,14 +26,16 @@ users:
 timezone: "europe/berlin"
 
 # # Update apt packages on first boot
-# package_update: true
-# package_upgrade: true
+package_update: true
+package_upgrade: true
 # package_reboot_if_required: true
-package_upgrade: false
+# package_upgrade: false
 
 # # Install any additional apt packages you need here
-# packages:
-# - ntp
+packages:
+ - nfs-kernel-server
+ - nfs-common
+ - rpcbind
 
 # # WiFi connect to HotSpot
 # # - use `wpa_passphrase SSID PASSWORD` to encrypt the psk
@@ -64,9 +66,11 @@ runcmd:
   - 'systemctl restart avahi-daemon'
   # initialize swarm
   - 'sleep 10'
-  - 'docker swarm init > /home/feeder/swarm_attach.txt'
+  - 'mkdir /srv/nfs'
+  - 'chown nobody:nogroup /srv/nfs'
+  - 'docker swarm init > /srv/nfs/swarm_attach.txt'
   # install GUI
-  - 'curl -L https://raw.githubusercontent.com/holgerimbery/feeder/master/portainer-agent-stack.yml -o /home/feeder/portainer-agent-stack.yml'
-  - 'docker stack deploy --compose-file=/home/feeder/portainer-agent-stack.yml portainer'
+  - 'curl -L https://raw.githubusercontent.com/holgerimbery/feeder/master/portainer-agent-stack.yml -o /srv/nfs/portainer-agent-stack.yml'
+  - docker stack deploy --compose-file=/srv/nfs/portainer-agent-stack.yml portainer
  #  # Activate WiFi interface
 #  - 'ifup wlan0'
