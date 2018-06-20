@@ -139,15 +139,15 @@
 	},
 	{
 		"type": "stack",
-		"title": "feeder",
-		"description": "feeder cluster",
-		"note": "feeder cluster, please refer to <a href=\"https://github.com/holgerimbery/feeder\" target=\"_blank\">feeder documentation</a> for production deployments.",
+		"title": "feeder-beta",
+		"description": "feeder cluster - beta-version",
+		"note": "feeder cluster - beta version (feeling adventurous?), please refer to <a href=\"https://github.com/holgerimbery/feeder\" target=\"_blank\">feeder documentation</a> for production deployments.",
 		"categories": ["feeder"],
 		"platform": "linux",
 		"logo": "https://portainer.io/images/logos/registry.png",
 		"repository": {
 			"url": "https://github.com/holgerimbery/feeder",
-			"stackfile": "stacks/feeder-docker-stack.yml"
+			"stackfile": "stacks/feeder-docker-stack-beta.yml"
 		}
 	}
 
