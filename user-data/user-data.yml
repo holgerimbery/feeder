@@ -26,14 +26,16 @@ users:
 timezone: "europe/berlin"
 
 # # Update apt packages on first boot
-# package_update: true
-# package_upgrade: true
+package_update: true
+package_upgrade: true
 # package_reboot_if_required: true
-package_upgrade: false
+# package_upgrade: false
 
 # # Install any additional apt packages you need here
-# packages:
-#  - ntp
+packages:
+ - nfs-kernel-server
+ - nfs-common
+ - rpcbind
 
 # # WiFi connect to HotSpot
 # # - use `wpa_passphrase SSID PASSWORD` to encrypt the psk
@@ -62,6 +64,9 @@ package_upgrade: false
 runcmd:
   # Pickup the hostname changes
   - 'systemctl restart avahi-daemon'
+  - 'sleep 10'
+  - 'mkdir /srv/nfs'
+  - 'chown nobody:nogroup /srv/nfs'
   # install GUI
   - 'docker volume create portainer_data'
   - 'docker run -d -p 9000:9000 --name portainer --restart always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer --templates https://raw.githubusercontent.com/holgerimbery/feeder/master/templates.json --host unix:///var/run/docker.sock'
