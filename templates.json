@@ -12,7 +12,7 @@
 	],
 	"volumes": [{
 		"container": "/data",
-		"bind": "/home/feeder/config/node-red"
+		"bind": "/srv/nfs/config/node-red"
 	}]
 },
 {
@@ -30,15 +30,15 @@
 	],
 	"volumes": [{
 			"container": "/mqtt/config",
-			"bind": "/home/feeder/config/mosquitto/config"
+			"bind": "/srv/nfs/config/mosquitto/config"
 		},
 		{
 			"container": "/mqtt/log",
-			"bind": "/home/feeder/config/mosquitto/log"
+			"bind": "/srv/nfs/config/mosquitto/log"
 		},
 		{
 			"container": "/mqtt/config/data",
-			"bind": "/home/feeder/config/mosquitto/data"
+			"bind": "/srv/nfs/config/mosquitto/data"
 		}
 	]
 },
@@ -58,11 +58,11 @@
 	],
 	"volumes": [{
 			"container": "/var/lib/influxdb",
-			"bind": "/home/feeder/config/influxdb/db"
+			"bind": "/srv/nfs/config/influxdb/db"
 		},
 		{
 			"container": "/etc/influxdb/influxdb.conf",
-			"bind": "/home/feeder/config/influxdb/config/influxdb.conf"
+			"bind": "/srv/nfs/config/influxdb/config/influxdb.conf"
 		}
 	],
 	"command": "influxd -config /etc/influxdb/influxdb.conf"
@@ -82,11 +82,11 @@
 	],
 	"volumes": [{
 			"container": "/var/lib/kapacitor",
-			"bind": "/home/feeder/config/kapacitor/data"
+			"bind": "/srv/nfs/config/kapacitor/data"
 		},
 		{
 			"container": "/etc/kapacitor/",
-			"bind": "/home/feeder/config/kapacitor/config"
+			"bind": "/srv/nfs/config/kapacitor/config"
 		}
 	],
 	"command": "kapacitord"
@@ -107,7 +107,7 @@
 	],
 	"volumes": [{
 			"container": "/etc/telegraf/telegraf.conf",
-			"bind": "/home/feeder/config/telegraf/telegraf.conf"
+			"bind": "/srv/nfs/config/telegraf/telegraf.conf"
 		}
 
 	]
@@ -126,7 +126,7 @@
 	],
 	"volumes": [{
 			"container": "/var/lib/chronograf",
-			"bind": "/home/feeder/config/chronograf"
+			"bind": "/srv/nfs/config/chronograf"
 		}
 
 	]
