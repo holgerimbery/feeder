@@ -1,21 +1,21 @@
 version: '3'
 services:
 
-  node-red:
-    image: raymondmm/node-red:latest-8-rpi23
-    ports:
-     - 1880:1880
-    volumes:
-     - /srv/nfs/config/node-red:/data
-     - /etc/localtime:/etc/localtime:ro
-    environment:
-      HOSTNAME: nodered
-    deploy:
-      restart_policy:
-        condition: any
-        delay: 5s
-        max_attempts: 3
-        window: 120s
+#  node-red:
+#    image: raymondmm/node-red:latest-8-rpi23
+#    ports:
+#     - 1880:1880
+#    volumes:
+#     - /srv/nfs/config/node-red:/data
+#     - /etc/localtime:/etc/localtime:ro
+#    environment:
+#      HOSTNAME: nodered
+#    deploy:
+#      restart_policy:
+#        condition: any
+#        delay: 5s
+#        max_attempts: 3
+#        window: 120s
         
   mosquitto:
     image: holgerimbery/docker_mosquitto
