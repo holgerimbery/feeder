@@ -2,7 +2,7 @@ version: '3'
 
 services:
   proxy:
-    image: ahaurw01/docker-flow-proxy:armhf
+    image: dockerflow/docker-flow-proxy:18.06.15-63-linux-arm
     ports:
       - 80:80
       - 443:443
@@ -15,7 +15,7 @@ services:
       replicas: 2
 
   swarm-listener:
-    image: ahaurw01/docker-flow-swarm-listener:armhf
+    image: dockerflow/docker-flow-swarm-listener:18.06.03-26-linux-arm
     networks:
       - agent_network
     volumes:
@@ -28,7 +28,7 @@ services:
         constraints: [node.role == manager]
 
   letsencrypt-companion:
-    image: ahaurw01/docker-flow-letsencrypt:armhf
+    image: holgerimbery/docker-flow-letsencrypt:arm64v8-stretch
     networks:
       - agent_network
     environment:
