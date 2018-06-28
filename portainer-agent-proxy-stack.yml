@@ -48,7 +48,7 @@ services:
         - com.df.port=80
       placement:
         # change to meet node.id
-        constraints: [node.id == 4u7pwq2psn43hrfzp81xo0v6l]
+        constraints: [node.role == manager]
       replicas: 1
 
 
