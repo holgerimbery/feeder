@@ -28,7 +28,7 @@ services:
         constraints: [node.role == manager]
 
   letsencrypt-companion:
-    image: holgerimbery/docker-flow-letsencrypt:arm64v8-stretch
+    image: holgerimbery/docker-flow-letsencrypt:latest
     networks:
       - agent_network
     environment:
