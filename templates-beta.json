@@ -131,6 +131,25 @@
 
 	]
 },
+{
+	"type": "container",
+	"title": "webssh2",
+	"name": "webssh2",
+	"description": "graphical webbased ssh client for docker environements",
+	"categories": ["feeder-addon"],
+	"platform": "linux",
+	"logo": "https://portainer.io/images/logos/registry.png",
+	"image": "holgerimbery/docker_webssh2:latest",
+	"ports": [
+		"2222/tcp"
+	],
+	"volumes": [{
+			"container": "/var/lib/chronograf",
+			"bind": "/srv/nfs/config/chronograf"
+		}
+
+	]
+},
 	{
 		"type": "stack",
 		"title": "feeder",
