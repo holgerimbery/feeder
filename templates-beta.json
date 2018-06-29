@@ -125,8 +125,8 @@
 		"8888/tcp"
 	],
 	"volumes": [{
-			"container": "/var/lib/chronograf",
-			"bind": "/srv/nfs/config/chronograf"
+			"container": "/WebSSH2/config.json",
+			"bind": "/srv/nfs/config/webssh2/config.json"
 		}
 
 	]
