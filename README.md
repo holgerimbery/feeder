@@ -2,8 +2,7 @@
 
 
 ## English
-*feeder (small container ship)* is an IoT Appliance with MQTT broker, controller, analytics, monitoring and docker administration based on
-the latest hypriot-os and portainer.io container management.
+*feeder (small container ship)* is an Appliance with docker administration based on the latest hypriot-os and portainer.io container management.
 
 *feeder* comes with a ready to deploy Raspberry Pi SD-Image file (standard [hypriot-os](https://github.com/hypriot/image-builder-rpi/releases)  - to be downloaded from hypriot original git-repro -  with custom cloud-init file from here), you can be deploy it manually with [etcher](https://etcher.io) and put the [cloud-init file](https://raw.githubusercontent.com/holgerimbery/feeder/master/user-data.yml) on the /boot partition of the sd-card or download the image automated and deploy everything automated with hypriot flash tool (linux and mac) with included scripts.
 
@@ -16,7 +15,7 @@ feeders default is a ethernet connection with dhcp. default username/password: f
 #### feeder is also available in swarm mode to distribute services over more than one raspberrypi
 
 ## Deutsch: 
-*feeder (Versorger - kleines Schiff zum Containertransport)* ist eine IoT Appliance mit MQTT broker, controller, analytics, monitoring und docker Administration basierend auf der aktuellen hypriot-os Version sowie auf portainer.io Management
+*feeder (Versorger - kleines Schiff zum Containertransport)* ist eine Appliance mit docker Administration basierend auf der aktuellen hypriot-os Version sowie auf portainer.io Management
 
 *feeder* kommt als fertiges SD-Image für RaspberryPi (Download aus dem [hypriot-os](https://github.com/hypriot/image-builder-rpi/releases) Repository mit cloud-init Skript von hier), Installation mit [etcher](https://etcher.io) und kopieren des [cloud-init](https://raw.githubusercontent.com/holgerimbery/feeder/master/user-data.yml) Files auf die /boot Partition der SD-Karte oder Skript gestützter Download und Installationsprozess mit hypriot flash tool in einem Schritt (linux und Mac). Während des 
 Installationprozesses werden die in hypriot-os vorhandenen cloud-init Routinen genutzt.
