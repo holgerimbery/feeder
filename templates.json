@@ -50,7 +50,7 @@
 	"categories": ["feeder-iot"],
 	"platform": "linux",
 	"logo": "https://influxdata.github.io/branding/img/downloads/influx-logo-complete--preview.svg",
-	"image": "library/influxdb",
+	"image": "arm32v7/influxdb:latest",
 	"ports": [
 		"8083/tcp",
 		"8086/tcp",
