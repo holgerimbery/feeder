@@ -45,7 +45,7 @@ services:
     restart: always
 
   influxdb:
-    image: library/influxdb:latest
+    image: arm32v7/influxdb:latest
     ports:
      - 8083:8083
      - 8086:8086
