@@ -1,7 +1,7 @@
 version: '3'
 services:
 
-node-red:
+  node-red:
     image: holgerimbery/node-red
     ports:
      - 1880:1880
