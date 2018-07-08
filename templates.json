@@ -6,7 +6,7 @@
 	"categories": ["feeder-iot"],
 	"platform": "linux",
 	"logo": "https://nodered.org/about/resources/media/node-red-icon-2.png",
-	"image": "nodered/node-red-docker:rpi-v8",
+	"image": "holgerimbery/node-red",
 	"ports": [
 		"1880/tcp"
 	],
