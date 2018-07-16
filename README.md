@@ -1,3 +1,5 @@
+![feeder_logo](https://github.com/holgerimbery/environment/raw/master/feeder_logo_small.jpg)
+
 # feeder
 feeder has a little sister, feeder-button - an addon for RaspberryMatic 
 
