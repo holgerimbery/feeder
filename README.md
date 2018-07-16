@@ -1,11 +1,6 @@
 ![feeder_logo](https://github.com/holgerimbery/environment/raw/master/feeder_logo_small.jpg)
 
 # feeder
-feeder has a little sister, feeder-button - an addon for RaspberryMatic 
-
-feeder hat eine kleine Schwester, feeder-button - ein Addon. für RaspberryMatic
-[feeder-button](https://github.com/holgerimbery/feeder-button/releases)
-
 
 ## English
 *feeder (small container ship)* is an Appliance with docker administration based on the latest hypriot-os and portainer.io container management.
@@ -49,4 +44,11 @@ installation described in [wiki](https://github.com/holgerimbery/feeder/wiki/ins
 ## example: deployment of a stack (set of containers) to a swarm with one click
 
 ![stack](https://github.com/holgerimbery/feeder/raw/master/pictures/stack.png)
+
+
+## Homematic / RaspberryMatic
+feeder has a little sister, feeder-button - an addon for RaspberryMatic 
+
+feeder hat eine kleine Schwester, feeder-button - ein Addon. für RaspberryMatic
+[feeder-button](https://github.com/holgerimbery/feeder-button/releases)
 
