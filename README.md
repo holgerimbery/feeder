@@ -1,7 +1,5 @@
 ![feeder_logo](https://github.com/holgerimbery/environment/raw/master/feeder_logo_small.jpg)
 
-# feeder
-
 ## English
 *feeder (small container ship)* is an Appliance with docker administration based on the latest hypriot-os and portainer.io container management.
 
