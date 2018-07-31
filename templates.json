@@ -141,8 +141,8 @@
 		"logo": "https://portainer.io/images/logos/registry.png",
 		"image": "holgerimbery/hm2mqtt",
 		"ports": [
-			"2126",
-			"2127"
+			"2126":"2126",
+			"2127":"2127"
 		],
 		"env": [{
 				"name": "HM2MQTT_MQTT-URL",
@@ -185,3 +185,4 @@
 	}
 
 ]
+}
