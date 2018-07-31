@@ -140,6 +140,7 @@
 		"platform": "linux",
 		"logo": "https://portainer.io/images/logos/registry.png",
 		"image": "holgerimbery/hm2mqtt",
+		"network": "host",
 		"ports": [
 			"2126",
 			"2127"
