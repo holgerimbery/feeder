@@ -141,8 +141,8 @@
 		"logo": "https://portainer.io/images/logos/registry.png",
 		"image": "holgerimbery/hm2mqtt",
 		"ports": [
-			"2126",
-			"2127"
+			"2126":"2126",
+			"2127":"2127"
 		],
 		"env": [{
 				"name": "HM2MQTT_MQTT-URL",
@@ -158,7 +158,7 @@
 			},
 			{
 				"name": "HM2MQTT_INIT-ADDRESS",
-				"label": "Host Adress",
+				"label": "Host Address",
 				"description": "Address of docker host format: ip.address",
 				"default": "192.168.1.100"
 			},
