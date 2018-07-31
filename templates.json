@@ -171,6 +171,23 @@
 			}
 		]
 	},
+ {
+		"type": "container",
+		"title": "homekit2mqtt",
+		"name": "homekit2mqtt",
+		"description": "homekit to mqtt interface ",
+		"categories": ["smarthome"],
+		"platform": "linux",
+		"logo": "https://portainer.io/images/logos/registry.png",
+		"image": "holgerimbery/homekit2mqtt",
+		"network": "host",
+	        "command": "homekit2mqtt -v debug -u mqtt://192.168.1.100:1883 -s /root/homekit2mqtt/store -m /root/homekit2mqtt/homekit2mqtt.json",
+	        "volumes": [{
+				"container": "/root/homekit2mqtt",
+				"bind": "/srv/nfs/config/homekit2mqtt"
+			}
+                       ]
+	},
 	{
 		"type": "stack",
 		"title": "feeder iot ",
