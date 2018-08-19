@@ -22,7 +22,7 @@
     "image": "holgerimbery/homekit2mqtt",
     "network": "host",
     "command": "homekit2mqtt -v debug -u mqtt://localhost -s /root/homekit2mqtt/store -m /root/homekit2mqtt/homekit2mqtt.json",
-    "volumes": [{ "/root/homekit2mqtt": "/srv/nfs/config/homekit2mqtt"}],
+    "volumes": [{ "container": "/root/homekit2mqtt"}],
     "ports": [
       "5000/tcp"
     ],
