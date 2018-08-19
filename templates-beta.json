@@ -19,7 +19,7 @@
     "categories": ["docker"],
     "platform": "linux",
     "logo": "https://portainer.io/images/logos/registry.png",
-    "image": "holgerimbery/homekit2mqtt"
+    "image": "holgerimbery/homekit2mqtt",
     "network": "host",
 	"command": "homekit2mqtt -v debug -u mqtt://localhost -s /root/homekit2mqtt/store -m /root/homekit2mqtt/homekit2mqtt.json",
 	"volumes": [{ "/root/homekit2mqtt": "/srv/nfs/config/homekit2mqtt"}],
