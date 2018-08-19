@@ -32,7 +32,7 @@
 		"categories": ["smarthome"],
 		"platform": "linux",
 		"logo": "https://portainer.io/images/logos/registry.png",
-		"image": "holgerimbery/hm2mqtt",
+		"image": "holgerimbery/hm2mqtt:latest",
 		"network": "host",
 		"ports": [
 			"2126",
