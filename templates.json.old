@@ -1,0 +1,205 @@
+[{
+		"type": "1",
+		"title": "NodeRed",
+		"name": "NodeRed",
+		"description": "a flow-based development tool for the internet of things",
+		"categories": ["feeder-iot"],
+		"platform": "linux",
+		"logo": "https://nodered.org/about/resources/media/node-red-icon-2.png",
+		"image": "holgerimbery/node-red",
+		"ports": [
+			"1880/tcp"
+		],
+		"volumes": [{
+			"container": "/data",
+			"bind": "/srv/nfs/config/node-red"
+		}]
+	},
+	{
+		"type": "1",
+		"title": "mosquitto",
+		"name": "mosquitto",
+		"description": "a mqtt broker for the internet of things",
+		"categories": ["feeder-iot"],
+		"platform": "linux",
+		"logo": "https://mosquitto.org/images/mosquitto-text-side-28.png",
+		"image": "holgerimbery/docker_mosquitto:latest",
+		"ports": [
+			"1883/tcp",
+			"9001/tcp"
+		],
+		"volumes": [{
+				"container": "/mqtt/config",
+				"bind": "/srv/nfs/config/mosquitto/config"
+			},
+			{
+				"container": "/mqtt/log",
+				"bind": "/srv/nfs/config/mosquitto/log"
+			},
+			{
+				"container": "/mqtt/config/data",
+				"bind": "/srv/nfs/config/mosquitto/data"
+			}
+		]
+	},
+	{
+		"type": "1",
+		"title": "influxdb",
+		"name": "influxdb",
+		"description": "a timebased database for the internet of things",
+		"categories": ["feeder-iot"],
+		"platform": "linux",
+		"logo": "https://influxdata.github.io/branding/img/downloads/influx-logo-complete--preview.svg",
+		"image": "arm32v7/influxdb:latest",
+		"ports": [
+			"8083/tcp",
+			"8086/tcp",
+			"2003/tcp"
+		],
+		"volumes": [{
+				"container": "/var/lib/influxdb",
+				"bind": "/srv/nfs/config/influxdb/db"
+			},
+			{
+				"container": "/etc/influxdb/influxdb.conf",
+				"bind": "/srv/nfs/config/influxdb/config/influxdb.conf"
+			}
+		],
+		"command": "influxd -config /etc/influxdb/influxdb.conf"
+
+	},
+	{
+		"type": "1",
+		"title": "kapacitor",
+		"name": "kapacitor",
+		"description": "a Real-time Streaming Data Processing Engine",
+		"categories": ["feeder-iot"],
+		"platform": "linux",
+		"logo": "https://influxdata.github.io/branding/img/downloads/influx-logo-complete--preview.svg",
+		"image": "library/kapacitor",
+		"ports": [
+			"9092/tcp"
+		],
+		"volumes": [{
+				"container": "/var/lib/kapacitor",
+				"bind": "/srv/nfs/config/kapacitor/data"
+			},
+			{
+				"container": "/etc/kapacitor/",
+				"bind": "/srv/nfs/config/kapacitor/config"
+			}
+		],
+		"command": "kapacitord"
+	},
+	{
+		"type": "1",
+		"title": "telegraf",
+		"name": "telegraf",
+		"description": "collecting and reporting agent",
+		"categories": ["feeder-iot"],
+		"platform": "linux",
+		"logo": "https://influxdata.github.io/branding/img/downloads/influx-logo-complete--preview.svg",
+		"image": "library/telegraf",
+		"ports": [
+			"8092/tcp",
+			"8094/tcp",
+			"8125/tcp"
+		],
+		"volumes": [{
+				"container": "/etc/telegraf/telegraf.conf",
+				"bind": "/srv/nfs/config/telegraf/telegraf.conf"
+			}
+
+		]
+	},
+	{
+		"type": "1",
+		"title": "chronograf",
+		"name": "chronograf",
+		"description": "graphical interface to influxdb, telegraf, kapacitor",
+		"categories": ["feeder-iot"],
+		"platform": "linux",
+		"logo": "https://influxdata.github.io/branding/img/downloads/influx-logo-complete--preview.svg",
+		"image": "library/chronograf",
+		"ports": [
+			"8888/tcp"
+		],
+		"volumes": [{
+				"container": "/var/lib/chronograf",
+				"bind": "/srv/nfs/config/chronograf"
+			}
+
+		]
+	},
+ 	{
+		"type": "1",
+		"title": "hm2mqtt",
+		"name": "hm2mqtt",
+		"description": "eq3 AG homematic to mqtt interface ",
+		"categories": ["smarthome"],
+		"platform": "linux",
+		"logo": "https://portainer.io/images/logos/registry.png",
+		"image": "holgerimbery/hm2mqtt",
+		"network": "host",
+		"ports": [
+			"2126",
+			"2127"
+		],
+		"env": [{
+				"name": "HM2MQTT_MQTT-URL",
+				"label": "MQTT-Broker",
+				"description": "Address of mqtt broker format: mqtt://ip.address or mqtts://ip.address",
+				"default": "mqtt://192.168.1.99"
+			},
+			{
+				"name": "HM2MQTT_CCU-ADDRESS",
+				"label": "CCU-Address",
+				"description": "Address of CCU format: ip.address",
+				"default": "192.168.1.100"
+			},
+			{
+				"name": "HM2MQTT_INIT-ADDRESS",
+				"label": "Host Address",
+				"description": "Address of docker host format: ip.address",
+				"default": "192.168.1.100"
+			},
+			{
+				"name": "HM2MQTT_VERBOSITY",
+				"label": "Debug verbosity",
+				"description": "verbosity level",
+				"default": "default"
+			}
+		]
+	},
+        {
+		"type": "1",
+		"title": "homekit2mqtt",
+		"name": "homekit2mqtt",
+		"description": "homekit to mqtt interface ",
+		"categories": ["smarthome"],
+		"platform": "linux",
+		"logo": "https://portainer.io/images/logos/registry.png",
+		"image": "holgerimbery/homekit2mqtt",
+		"network": "host",
+	        "command": "homekit2mqtt -v debug -u mqtt://localhost -s /root/homekit2mqtt/store -m /root/homekit2mqtt/homekit2mqtt.json",
+	        "volumes": [{
+				"container": "/root/homekit2mqtt",
+				"bind": "/srv/nfs/config/homekit2mqtt"
+			}
+        ]
+	},
+	{
+		"type": "2",
+		"title": "feeder iot ",
+		"description": "feeder iot cluster - telegraf, influxdb, chronograf, kapacitor, node-red",
+		"note": "feeder iot cluster, please refer to <a href=\"https://github.com/holgerimbery/feeder\" target=\"_blank\">feeder documentation</a> for production deployments.",
+		"categories": ["feeder"],
+		"platform": "linux",
+		"logo": "https://portainer.io/images/logos/registry.png",
+		"repository": {
+			"url": "https://github.com/holgerimbery/feeder",
+			"stackfile": "stacks/feeder-docker-stack.yml"
+		}
+	}
+
+]
