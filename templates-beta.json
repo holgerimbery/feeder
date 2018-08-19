@@ -23,6 +23,19 @@
     "network": "host",
     "command": "homekit2mqtt -v debug -u mqtt://localhost -s /root/homekit2mqtt/store -m /root/homekit2mqtt/homekit2mqtt.json",
     "volumes": [{ "container": "/root/homekit2mqtt"}]
-  }  
+  },
+  {
+		"type": 2,
+		"title": "feeder iot ",
+		"description": "feeder iot cluster - telegraf, influxdb, chronograf, kapacitor, node-red",
+		"note": "feeder iot cluster, please refer to <a href=\"https://github.com/holgerimbery/feeder\" target=\"_blank\">feeder documentation</a> for production deployments.",
+		"categories": ["docker"],
+		"platform": "linux",
+		"logo": "https://portainer.io/images/logos/registry.png",
+		"repository": {
+			"url": "https://github.com/holgerimbery/feeder",
+			"stackfile": "stacks/feeder-docker-stack.yml"
+		}
+	}  
 ]
 
