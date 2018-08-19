@@ -1,5 +1,5 @@
 [{
-		"type": "container",
+		"type": "1",
 		"title": "NodeRed",
 		"name": "NodeRed",
 		"description": "a flow-based development tool for the internet of things",
@@ -16,7 +16,7 @@
 		}]
 	},
 	{
-		"type": "container",
+		"type": "1",
 		"title": "mosquitto",
 		"name": "mosquitto",
 		"description": "a mqtt broker for the internet of things",
@@ -43,7 +43,7 @@
 		]
 	},
 	{
-		"type": "container",
+		"type": "1",
 		"title": "influxdb",
 		"name": "influxdb",
 		"description": "a timebased database for the internet of things",
@@ -69,7 +69,7 @@
 
 	},
 	{
-		"type": "container",
+		"type": "1",
 		"title": "kapacitor",
 		"name": "kapacitor",
 		"description": "a Real-time Streaming Data Processing Engine",
@@ -92,7 +92,7 @@
 		"command": "kapacitord"
 	},
 	{
-		"type": "container",
+		"type": "1",
 		"title": "telegraf",
 		"name": "telegraf",
 		"description": "collecting and reporting agent",
@@ -113,7 +113,7 @@
 		]
 	},
 	{
-		"type": "container",
+		"type": "1",
 		"title": "chronograf",
 		"name": "chronograf",
 		"description": "graphical interface to influxdb, telegraf, kapacitor",
@@ -132,7 +132,7 @@
 		]
 	},
  	{
-		"type": "container",
+		"type": "1",
 		"title": "hm2mqtt",
 		"name": "hm2mqtt",
 		"description": "eq3 AG homematic to mqtt interface ",
@@ -172,7 +172,7 @@
 		]
 	},
         {
-		"type": "container",
+		"type": "1",
 		"title": "homekit2mqtt",
 		"name": "homekit2mqtt",
 		"description": "homekit to mqtt interface ",
@@ -189,7 +189,7 @@
         ]
 	},
 	{
-		"type": "stack",
+		"type": "2",
 		"title": "feeder iot ",
 		"description": "feeder iot cluster - telegraf, influxdb, chronograf, kapacitor, node-red",
 		"note": "feeder iot cluster, please refer to <a href=\"https://github.com/holgerimbery/feeder\" target=\"_blank\">feeder documentation</a> for production deployments.",
