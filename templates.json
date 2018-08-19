@@ -171,7 +171,7 @@
 			}
 		]
 	},
-        {
+    {
 		"type": "container",
 		"title": "homekit2mqtt",
 		"name": "homekit2mqtt",
@@ -186,7 +186,7 @@
 				"container": "/root/homekit2mqtt",
 				"bind": "/srv/nfs/config/homekit2mqtt"
 			}
-                       ]
+        ]
 	},
 	{
 		"type": "stack",
