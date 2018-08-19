@@ -25,6 +25,46 @@
     "volumes": [{ "container": "/root/homekit2mqtt"}]
   },
   {
+		"type": 1,
+		"title": "hm2mqtt",
+		"name": "hm2mqtt",
+		"description": "eq3 AG homematic to mqtt interface ",
+		"categories": ["smarthome"],
+		"platform": "linux",
+		"logo": "https://portainer.io/images/logos/registry.png",
+		"image": "holgerimbery/hm2mqtt",
+		"network": "host",
+		"ports": [
+			"2126",
+			"2127"
+		],
+		"env": [{
+				"name": "HM2MQTT_MQTT-URL",
+				"label": "MQTT-Broker",
+				"description": "Address of mqtt broker format: mqtt://ip.address or mqtts://ip.address",
+				"default": "mqtt://192.168.1.99"
+			},
+			{
+				"name": "HM2MQTT_CCU-ADDRESS",
+				"label": "CCU-Address",
+				"description": "Address of CCU format: ip.address",
+				"default": "192.168.1.100"
+			},
+			{
+				"name": "HM2MQTT_INIT-ADDRESS",
+				"label": "Host Address",
+				"description": "Address of docker host format: ip.address",
+				"default": "192.168.1.100"
+			},
+			{
+				"name": "HM2MQTT_VERBOSITY",
+				"label": "Debug verbosity",
+				"description": "verbosity level",
+				"default": "default"
+			}
+		]
+	},
+  {
 		"type": 2,
 		"title": "feeder iot ",
 		"description": "feeder iot cluster - telegraf, influxdb, chronograf, kapacitor, node-red",
