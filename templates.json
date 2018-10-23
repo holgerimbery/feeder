@@ -13,65 +13,10 @@
     "volumes": [{ 
 		"container": "/var/lib/registry"}]
   },
-{
-    "type": 1,
-    "title": "homekit2mqtt",
-    "description": "homekit to mqtt interface",
-    "categories": ["smarthome"],
-    "platform": "linux",
-    "logo": "https://portainer.io/images/logos/registry.png",
-    "image": "holgerimbery/homekit2mqtt:latest",
-    "network": "host",
-    "command": "homekit2mqtt -v debug -u mqtt://localhost -s /root/homekit2mqtt/store -m /root/homekit2mqtt/homekit2mqtt.json",
-	"volumes": [{ 
-		"container": "/root/homekit2mqtt",
-		"bind": "/srv/nfs/config/homekit2mqtt"
-		}]
-  },
-  {
-		"type": 1,
-		"title": "hm2mqtt",
-		"name": "hm2mqtt",
-		"description": "eq3 AG homematic to mqtt interface ",
-		"categories": ["smarthome"],
-		"platform": "linux",
-		"logo": "https://portainer.io/images/logos/registry.png",
-		"image": "holgerimbery/hm2mqtt:latest",
-		"network": "host",
-		"ports": [
-			"2126",
-			"2127"
-		],
-		"env": [{
-				"name": "HM2MQTT_MQTT-URL",
-				"label": "MQTT-Broker",
-				"description": "Address of mqtt broker format: mqtt://ip.address or mqtts://ip.address",
-				"default": "mqtt://192.168.1.99"
-			},
-			{
-				"name": "HM2MQTT_CCU-ADDRESS",
-				"label": "CCU-Address",
-				"description": "Address of CCU format: ip.address",
-				"default": "192.168.1.100"
-			},
-			{
-				"name": "HM2MQTT_INIT-ADDRESS",
-				"label": "Host Address",
-				"description": "Address of docker host format: ip.address",
-				"default": "192.168.1.100"
-			},
-			{
-				"name": "HM2MQTT_VERBOSITY",
-				"label": "Debug verbosity",
-				"description": "verbosity level",
-				"default": "default"
-			}
-		]
-	},
   {
 		"type": 2,
 		"title": "feeder iot ",
-		"description": "feeder iot cluster - telegraf, influxdb, chronograf, kapacitor, node-red",
+		"description": "feeder iot stack - telegraf, influxdb, chronograf, kapacitor, node-red",
 		"note": "feeder iot cluster, please refer to <a href=\"https://github.com/holgerimbery/feeder\" target=\"_blank\">feeder documentation</a> for production deployments.",
 		"categories": ["smarthome"],
 		"platform": "linux",
@@ -80,6 +25,19 @@
 			"url": "https://github.com/holgerimbery/feeder",
 			"stackfile": "stacks/feeder-docker-stack.yml"
 		}
-	}  
+	} ,
+	{
+		"type": 2,
+		"title": "feeder TICK ",
+		"description": "feeder TICK stack - telegraf, influxdb, chronograf, kapacitor, node-red",
+		"note": "feeder TICK stack",
+		"categories": ["smarthome"],
+		"platform": "linux",
+		"logo": "https://portainer.io/images/logos/registry.png",
+		"repository": {
+			"url": "https://github.com/holgerimbery/feeder",
+			"stackfile": "stacks/feeder-docker-tick-stack.yml"
+		}
+	}
 ]
 
