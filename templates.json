@@ -29,7 +29,7 @@
 	{
 		"type": 2,
 		"title": "feeder TICK ",
-		"description": "feeder TICK stack - telegraf, influxdb, chronograf, kapacitor, node-red",
+		"description": "feeder TICK stack - telegraf, influxdb, chronograf, kapacitor",
 		"note": "feeder TICK stack",
 		"categories": ["smarthome"],
 		"platform": "linux",
