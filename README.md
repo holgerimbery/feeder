@@ -1,6 +1,7 @@
 ![feeder_logo](https://github.com/holgerimbery/environment/raw/master/feeder_logo_small.jpg)
 
 *feeder (small container ship)* stack*
+
 stack file for docker swam gui based on [portainer.io](https://portainer.io) with gui based installation routines for addtional containers and stacks
 
 available:
