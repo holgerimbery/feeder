@@ -463,34 +463,6 @@
     },
     {
         "type": 1,
-        "title": "WordPress",
-        "description": "A free and open-source CMS",
-        "categories": [
-            "CMS"
-        ],
-        "platform": "linux",
-        "logo": "https://portainer.io/images/logos/wordpress.png",
-        "image": "wordpress:latest",
-        "env": [
-            {
-                "name": "WORDPRESS_DB_HOST",
-                "label": "MySQL database host",
-                "type": 1
-            },
-            {
-                "name": "WORDPRESS_DB_PASSWORD",
-                "label": "Database password"
-            }
-        ],
-        "ports": [
-            "80/tcp"
-        ],
-        "volumes": [
-            "/var/www/html"
-        ]
-    },
-    {
-        "type": 1,
         "title": "Drupal",
         "description": "Open-source content management framework",
         "categories": [
