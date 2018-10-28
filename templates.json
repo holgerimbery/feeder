@@ -932,7 +932,7 @@
         }
     },
     {
-        "type": "stack",
+        "type": 2,
         "title": "IronFunctions",
         "description": "Open-source serverless computing platform",
         "note": "Deploys the IronFunctions API and UI.",
@@ -947,7 +947,7 @@
         }
     },
     {
-        "type": "stack",
+        "type": 2,
         "title": "CockroachDB",
         "description": "CockroachDB cluster",
         "note": "Deploys an insecure CockroachDB cluster, please refer to <a href=\"https://www.cockroachlabs.com/docs/stable/orchestrate-cockroachdb-with-docker-swarm.html\" target=\"_blank\">CockroachDB documentation</a> for production deployments.",
@@ -962,7 +962,7 @@
         }
     },
     {
-        "type": "stack",
+        "type": 2,
         "title": "Wordpress",
         "description": "Wordpress setup with a MySQL database",
         "note": "Deploys a Wordpress instance connected to a MySQL database.",
@@ -984,7 +984,7 @@
         ]
     },
     {
-        "type": "stack",
+        "type": 2,
         "title": "Microsoft OMS Agent",
         "description": "Microsoft Operations Management Suite Linux agent.",
         "categories": [
@@ -1011,7 +1011,7 @@
     },
     {
         "title": "Sematext Docker Agent",
-        "type": "stack",
+        "type": 2,
         "categories": [
             "Log Management",
             "Monitoring"
