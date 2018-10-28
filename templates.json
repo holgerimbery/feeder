@@ -475,7 +475,7 @@
             {
                 "name": "WORDPRESS_DB_HOST",
                 "label": "MySQL database host",
-                "type": 1,
+                "type": 1
             },
             {
                 "name": "WORDPRESS_DB_PASSWORD",
@@ -503,7 +503,7 @@
             {
                 "name": "JOOMLA_DB_HOST",
                 "label": "MySQL database host",
-                "type": 1,
+                "type": 1
             },
             {
                 "name": "JOOMLA_DB_PASSWORD",
@@ -614,7 +614,7 @@
             {
                 "name": "MAUTIC_DB_HOST",
                 "label": "MySQL database host",
-                "type": 1,
+                "type": 1
             },
             {
                 "name": "MAUTIC_DB_PASSWORD",
@@ -714,7 +714,7 @@
             {
                 "name": "HOST",
                 "label": "PostgreSQL database host",
-                "type": 1,
+                "type": 1
             },
             {
                 "name": "USER",
