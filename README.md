@@ -7,8 +7,8 @@ stack file for docker swam gui based on [portainer.io](https://portainer.io) wit
 available:
 * container - registry
 * stack
-  * feeder TICK: telegraf, influxdb, chronograf, kapacitor [example config files]()
-  * feeder IoT: telegraf, influxdb, chronograf, kapacitor & node-red [example config files]()
+  * feeder TICK: telegraf, influxdb, chronograf, kapacitor [example config files](https://github.com/holgerimbery/feeder-stack/blob/master/config_files.tgz)
+  * feeder IoT: telegraf, influxdb, chronograf, kapacitor & node-red [example config files](https://github.com/holgerimbery/feeder-stack/blob/master/config_files.tgz)
 
 ## example: feeder gui installed on a swam of two raspberrypi 3 
 ![swarm](https://github.com/holgerimbery/feeder/raw/master/pictures/swarm_success.png)
