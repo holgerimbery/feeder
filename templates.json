@@ -491,34 +491,6 @@
     },
     {
         "type": 1,
-        "title": "Joomla",
-        "description": "Another free and open-source CMS",
-        "categories": [
-            "CMS"
-        ],
-        "platform": "linux",
-        "logo": "https://portainer.io/images/logos/joomla.png",
-        "image": "joomla:latest",
-        "env": [
-            {
-                "name": "JOOMLA_DB_HOST",
-                "label": "MySQL database host",
-                "type": 1
-            },
-            {
-                "name": "JOOMLA_DB_PASSWORD",
-                "label": "Database password"
-            }
-        ],
-        "ports": [
-            "80/tcp"
-        ],
-        "volumes": [
-            "/var/www/html"
-        ]
-    },
-    {
-        "type": 1,
         "title": "Drupal",
         "description": "Open-source content management framework",
         "categories": [
@@ -602,34 +574,6 @@
     },
     {
         "type": 1,
-        "title": "Mautic",
-        "description": "Open-source marketing automation platform",
-        "categories": [
-            "marketing"
-        ],
-        "platform": "linux",
-        "logo": "https://portainer.io/images/logos/mautic.png",
-        "image": "mautic/mautic:latest",
-        "env": [
-            {
-                "name": "MAUTIC_DB_HOST",
-                "label": "MySQL database host",
-                "type": 1
-            },
-            {
-                "name": "MAUTIC_DB_PASSWORD",
-                "label": "Database password"
-            }
-        ],
-        "ports": [
-            "80/tcp"
-        ],
-        "volumes": [
-            "/var/www/html"
-        ]
-    },
-    {
-        "type": 1,
         "title": "Wowza",
         "description": "Streaming media server",
         "categories": [
@@ -698,39 +642,6 @@
         ],
         "volumes": [
             "/usr/src/redmine/files"
-        ]
-    },
-    {
-        "type": 1,
-        "title": "Odoo",
-        "description": "Open-source business apps",
-        "categories": [
-            "project-management"
-        ],
-        "platform": "linux",
-        "logo": "https://portainer.io/images/logos/odoo.png",
-        "image": "odoo:latest",
-        "env": [
-            {
-                "name": "HOST",
-                "label": "PostgreSQL database host",
-                "type": 1
-            },
-            {
-                "name": "USER",
-                "label": "Database user"
-            },
-            {
-                "name": "PASSWORD",
-                "label": "Database password"
-            }
-        ],
-        "ports": [
-            "8069/tcp"
-        ],
-        "volumes": [
-            "/var/lib/odoo",
-            "/mnt/extra-addons"
         ]
     },
     {
