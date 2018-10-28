@@ -39,7 +39,7 @@ services:
       - PROXY_ADDRESS=proxy
       - CERTBOT_CRON_RENEW=('0 3 * * *' '0 15 * * *')
     volumes:
-          - /srv/nfs/config/docker-flow-proxy/etc/letsencrypt:/etc/letsencrypt
+          - letsencrypt_data:/etc/letsencrypt
     deploy:
       labels:
         - com.df.servicePath=/.well-known/acme-challenge
@@ -97,3 +97,7 @@ networks:
 
 volumes:
   portainer_data:
+    external: true
+  
+  letsencrypt_data:
+    external: trie
