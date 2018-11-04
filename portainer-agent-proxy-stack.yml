@@ -100,4 +100,4 @@ volumes:
     external: true
   
   letsencrypt_data:
-    external: trie
+    external: true
