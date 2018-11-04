@@ -6,7 +6,7 @@ services:
     ports:
      - 1880:1880
     volumes:
-     - /srv/nfs/config/node-red:/data
+     - /srv/node-red:/data
      - /etc/localtime:/etc/localtime:ro
     environment:
       HOSTNAME: nodered
@@ -20,9 +20,9 @@ services:
   mosquitto:
     image: holgerimbery/docker_mosquitto
     volumes:
-     - /srv/nfs/config/mosquitto/data:/mqtt/data
-     - /srv/nfs/config/mosquitto/config:/mqtt/config
-     - /srv/nfs/config/mosquitto/log:/mqtt/log
+     - /srv/mosquitto/data:/mqtt/data
+     - /srv/mosquitto/config:/mqtt/config
+     - /srv/mosquitto/log:/mqtt/log
      - /etc/localtime:/etc/localtime:ro
     deploy:
             mode: replicated
@@ -51,8 +51,8 @@ services:
      - 8086:8086
      - 2003:2003
     volumes:
-     - /srv/nfs/config/influxdb/db:/var/lib/influxdb
-     - /srv/nfs/config/influxdb/config/influxdb.conf:/etc/influxdb/influxdb.conf:ro
+     - /srv/influxdb/db:/var/lib/influxdb
+     - /srv/influxdb/config/influxdb.conf:/etc/influxdb/influxdb.conf:ro
      - /etc/localtime:/etc/localtime:ro
     environment:
      HOSTNAME: influxdb
@@ -70,7 +70,7 @@ services:
     environment:
      HOSTNAME: chronograf
     volumes:
-     - /srv/nfs/config/chronograf:/var/lib/chronograf
+     - /srv/chronograf:/var/lib/chronograf
      - /etc/localtime:/etc/localtime:ro
     ports:
      - 8888:8888
@@ -85,7 +85,7 @@ services:
      HOSTNAME: telegraf
     volumes:
      - /etc/localtime:/etc/localtime:ro
-     - /srv/nfs/config/telegraf/telegraf.conf:/etc/telegraf/telegraf.conf
+     - /srv/telegraf/telegraf.conf:/etc/telegraf/telegraf.conf
      - /var/run/docker.sock:/var/run/docker.sock
     ports:
      - 8092:8092
@@ -100,8 +100,8 @@ services:
      HOSTNAME: kapacitor
     volumes:
      - /etc/localtime:/etc/localtime:ro
-     - /srv/nfs/config/kapacitor/data:/var/lib/kapacitor
-     - /srv/nfs/config/kapacitor/config:/etc/kapacitor/
+     - /srv/kapacitor/data:/var/lib/kapacitor
+     - /srv/kapacitor/config:/etc/kapacitor/
     ports:
      - 9092:9092
     command: kapacitord

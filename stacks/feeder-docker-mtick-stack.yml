@@ -1,33 +1,6 @@
 version: '3'
 services:
    
-  mosquitto:
-    image: holgerimbery/docker_mosquitto
-    volumes:
-     - /srv/mosquitto/data:/mqtt/data
-     - /srv/mosquitto/config:/mqtt/config
-     - /srv/mosquitto/log:/mqtt/log
-     - /etc/localtime:/etc/localtime:ro
-    deploy:
-            mode: replicated
-            replicas: 1
- #           placement:
- #               constraints:
- #                   - node.hostname == bramble01
- 
-            restart_policy:
-               condition: any
-               delay: 5s
-               max_attempts: 3
-               window: 120s      
-    environment:
-     HOSTNAME: mosquitto
-    ports:
-     - 1883:1883
-     - 8883:8883
-     - 9001:9001
-    restart: always
-
   influxdb:
     image: arm32v7/influxdb:latest
     ports:
@@ -89,4 +62,5 @@ services:
     ports:
      - 9092:9092
     command: kapacitord
+
 
