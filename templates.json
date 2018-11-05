@@ -33,6 +33,21 @@
             "stackfile": "stacks/feeder-docker-stack.yml"
         }
     },
+	    {
+        "type": 2,
+        "title": "feeder MTICK ",
+        "description": "feeder MTICK stack - mosquitto, telegraf, influxdb, chronograf, kapacitor",
+        "note": "feeder TICK stack",
+        "categories": [
+            "smarthome"
+        ],
+        "platform": "linux",
+        "logo": "https://portainer.io/images/logos/registry.png",
+        "repository": {
+            "url": "https://github.com/holgerimbery/feeder",
+            "stackfile": "stacks/feeder-docker-tick-stack.yml"
+        }
+	},
     {
         "type": 2,
         "title": "feeder TICK ",
