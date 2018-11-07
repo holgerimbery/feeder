@@ -11,13 +11,13 @@ available:
   * feeder MTICK: mosquitto, telegraf, influxdb, chronograf, kapacitor [example config files](https://github.com/holgerimbery/feeder-stack/blob/master/config_files.tgz)
   * feeder IoT: telegraf, influxdb, chronograf, kapacitor & node-red [example config files](https://github.com/holgerimbery/feeder-stack/blob/master/config_files.tgz)
 
-## example: feeder gui installed on a swam of two raspberrypi 3 
+## example: feeder gui installed on a swam of eight raspberrypi 3b+
 ![swarm](https://github.com/holgerimbery/feeder/raw/master/pictures/swarm_success.png)
 
-## example: deployment of container via template with one click
+## example: available preconfigured stacks
 ![container](https://github.com/holgerimbery/feeder/raw/master/pictures/container.png)
 
-## example: deployment of a stack (set of containers) to a swarm with one click
+## example: deployment of a stack (set of containers) to a swarm with a single click
 ![stack](https://github.com/holgerimbery/feeder/raw/master/pictures/stack.png)
 
 
