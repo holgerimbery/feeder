@@ -2,9 +2,11 @@
 
 *feeder (small container ship)* stack*
 
-stack file for docker swam gui based on [portainer.io](https://portainer.io) with gui based installation routines for addtional containers and stacks. feeder stack ist the gui for [feeder-cluster](https://github.com/holgerimbery/feeder-cluster)
+stack file for docker swam gui based on [portainer.io](https://portainer.io) with gui based installation routines for addtional containers and stacks. 
 
-available:
+feeder-stack is the docker swarm gui for [feeder-cluster](https://github.com/holgerimbery/feeder-cluster)
+
+available preconfigured containers and stacks:
 * container - registry
 * stack
   * feeder TICK: telegraf, influxdb, chronograf, kapacitor [example config files](https://github.com/holgerimbery/feeder-stack/blob/master/config_files.tgz)
