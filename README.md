@@ -12,6 +12,7 @@ available preconfigured containers and stacks:
   * feeder TICK: telegraf, influxdb, chronograf, kapacitor [example config files](https://github.com/holgerimbery/feeder-stack/blob/master/config_files.tgz)
   * feeder MTICK: mosquitto, telegraf, influxdb, chronograf, kapacitor [example config files](https://github.com/holgerimbery/feeder-stack/blob/master/config_files.tgz)
   * feeder IoT: telegraf, influxdb, chronograf, kapacitor & node-red [example config files](https://github.com/holgerimbery/feeder-stack/blob/master/config_files.tgz)
+  * openfaas: function as a service
 
 ## example: feeder gui installed on a swam of eight raspberrypi 3b+
 ![swarm](https://github.com/holgerimbery/feeder/raw/master/pictures/swarm_success.png)
