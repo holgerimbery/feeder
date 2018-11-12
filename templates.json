@@ -29,7 +29,7 @@
         "platform": "linux",
         "logo": "https://portainer.io/images/logos/registry.png",
         "repository": {
-            "url": "https://github.com/holgerimbery/feeder",
+            "url": "https://github.com/holgerimbery/feeder-stack",
             "stackfile": "stacks/feeder-docker-stack.yml"
         }
     },
@@ -44,8 +44,8 @@
         "platform": "linux",
         "logo": "https://portainer.io/images/logos/registry.png",
         "repository": {
-            "url": "https://github.com/holgerimbery/feeder",
-            "stackfile": "stacks/feeder-docker-tick-stack.yml"
+            "url": "https://github.com/holgerimbery/feeder-stack",
+            "stackfile": "stacks/feeder-docker-mtick-stack.yml"
         }
 	},
     {
@@ -59,7 +59,7 @@
         "platform": "linux",
         "logo": "https://portainer.io/images/logos/registry.png",
         "repository": {
-            "url": "https://github.com/holgerimbery/feeder",
+            "url": "https://github.com/holgerimbery/feeder-stack",
             "stackfile": "stacks/feeder-docker-tick-stack.yml"
         }
 	},
