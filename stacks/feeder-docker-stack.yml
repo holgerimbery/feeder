@@ -18,7 +18,7 @@ services:
         window: 120s
         
   mosquitto:
-    image: holgerimbery/docker_mosquitto
+    image: holgerimbery/docker_mosquitto:latest-alpine
     volumes:
      - /srv/mosquitto/data:/mqtt/data
      - /srv/mosquitto/config:/mqtt/config
