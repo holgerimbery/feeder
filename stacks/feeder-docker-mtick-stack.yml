@@ -6,6 +6,8 @@ services:
     volumes:
      - /srv/mosquitto/data:/mqtt/data
      - /srv/mosquitto/config:/mqtt/config
+     # if smqtt/swebsocket
+     # - /srv/letsencrypt/archive/domain.tdl:/mqtt/config/certs
      - /srv/mosquitto/log:/mqtt/log
      - /etc/localtime:/etc/localtime:ro
     deploy:
