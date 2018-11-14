@@ -40,6 +40,7 @@ services:
       - CERTBOT_CRON_RENEW=('0 3 * * *' '0 15 * * *')
     volumes:
           - letsencrypt_data:/etc/letsencrypt
+        #  - /srv/letsencrypt:/etc/letsencrypt
     deploy:
       labels:
         - com.df.servicePath=/.well-known/acme-challenge
