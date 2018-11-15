@@ -93,6 +93,10 @@ services:
      - 8125:8125
     depends_on:
       - influxdb
+    deploy:
+      restart_policy:
+        condition: on-failure
+      mode: global
 
   kapacitor:
     image: library/kapacitor:latest
