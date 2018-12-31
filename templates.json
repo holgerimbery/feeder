@@ -7,7 +7,7 @@
             "docker"
         ],
         "platform": "linux",
-        "logo": "https://portainer.io/images/logos/registry.png",
+        "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/registry.png",
         "image": "registry:latest",
         "ports": [
             "5000/tcp"
@@ -27,7 +27,7 @@
             "smarthome"
         ],
         "platform": "linux",
-        "logo": "https://portainer.io/images/logos/registry.png",
+        "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/registry.png",
         "repository": {
             "url": "https://github.com/holgerimbery/feeder-stack",
             "stackfile": "stacks/feeder-docker-stack.yml"
@@ -42,7 +42,7 @@
             "smarthome"
         ],
         "platform": "linux",
-        "logo": "https://portainer.io/images/logos/registry.png",
+        "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/registry.png",
         "repository": {
             "url": "https://github.com/holgerimbery/feeder-stack",
             "stackfile": "stacks/feeder-docker-mtick-stack.yml"
@@ -57,7 +57,7 @@
             "smarthome"
         ],
         "platform": "linux",
-        "logo": "https://portainer.io/images/logos/registry.png",
+        "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/registry.png",
         "repository": {
             "url": "https://github.com/holgerimbery/feeder-stack",
             "stackfile": "stacks/feeder-docker-tick-stack.yml"
@@ -71,7 +71,7 @@
 		"note": "Deploys the API gateway and sample functions. You can access the UI on port 8080. <b>Warning</b>: the name of the stack must be 'func'.",
 		"categories": ["serverless"],
 		"platform": "linux",
-		"logo": "https://portainer.io/images/logos/openfaas.png",
+		"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/registry.png",
 		"repository": {
 		  "url": "https://github.com/openfaas/faas",
 		  "stackfile": "docker-compose.armhf.yml"
