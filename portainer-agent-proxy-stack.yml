@@ -2,7 +2,7 @@ version: '3'
 
 services:
   proxy:
-    image: dockerflow/docker-flow-proxy:18.06.15-63-linux-arm
+    image: dockerflow/docker-flow-proxy:18.11.07-15-linux-arm
     ports:
       - 80:80
       - 443:443
@@ -15,7 +15,7 @@ services:
       replicas: 2
 
   swarm-listener:
-    image: dockerflow/docker-flow-swarm-listener:18.06.03-26-linux-arm
+    image: dockerflow/docker-flow-swarm-listener:18.11.28-19-linux-arm
     networks:
       - agent_network
     volumes:
