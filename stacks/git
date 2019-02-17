@@ -1,0 +1,136 @@
+version: '3'
+services:
+  grafana:
+    image: grafana/grafana:6.0.0-beta2
+    networks:
+     - metrics
+     # - portainer_agent_network
+    volumes:
+     - /srv/grafana:/var/lib/grafana
+     - /etc/localtime:/etc/localtime:ro
+    # ports:
+    # - 3000:3000
+    deploy:
+      labels:
+       - com.df.notify=true
+       - com.df.distribute=true
+       - com.df.httpsOnly=true
+       - com.df.servicePath=/
+       - com.df.port=3000
+       - com.df.serviceDomain=domain.tdl
+      restart_policy:
+        condition: any
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+
+  influxdb:
+    image: arm32v7/influxdb:latest
+    ports:
+     - 8083:8083
+     - 8086:8086
+     - 2003:2003
+    volumes:
+     - /srv/influxdb/db:/var/lib/influxdb
+     - /srv/influxdb/config/influxdb.conf:/etc/influxdb/influxdb.conf:ro
+     - /etc/localtime:/etc/localtime:ro
+    networks:
+     - metrics
+     # - portainer_agent_network
+    environment:
+     HOSTNAME: influxdb
+    deploy:
+      restart_policy:
+        condition: any
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+    command: influxd -config /etc/influxdb/influxdb.conf
+
+  chronograf:
+    image: library/chronograf:latest
+    environment:
+     HOSTNAME: chronograf
+    volumes:
+     - /srv/chronograf:/var/lib/chronograf
+     - /etc/localtime:/etc/localtime:ro
+    ports:
+     - 8888:8888
+    networks:
+     - metrics
+    #  - portainer_agent_network
+
+  mosquitto:
+    image: holgerimbery/mosquitto:latest
+    volumes:
+     - /srv/mosquitto/data:/mqtt/data
+     - /srv/mosquitto/config:/mqtt/config
+     # if smqtt/swebsocket
+     # - /srv/letsencrypt/live/domain.tdl:/mqtt/config/certs
+     # - /srv/mosquitto/log:/mqtt/log
+     # - /etc/localtime:/etc/localtime:ro
+    deploy:
+            mode: replicated
+            replicas: 1
+ #           placement:
+ #               constraints:
+ #                   - node.hostname == bramble01
+
+            restart_policy:
+               condition: any
+               delay: 5s
+               max_attempts: 3
+               window: 120s
+    environment:
+     HOSTNAME: mosquitto
+    ports:
+     - 1883:1883
+     - 8883:8883
+     - 9001:9001
+    networks:
+     - metrics
+    # - portainer_agent_network
+
+
+  telegraf:
+    image: library/telegraf:latest
+    environment:
+     HOSTNAME: telegraf
+    volumes:
+     - /etc/localtime:/etc/localtime:ro
+     - /srv/telegraf/telegraf.conf:/etc/telegraf/telegraf.conf
+     - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+     - 8092:8092
+     - 8094:8094
+     - 8125:8125
+    depends_on:
+      - influxdb
+    deploy:
+      restart_policy:
+        condition: on-failure
+      mode: global
+    networks:
+     - metrics
+     - portainer_agent_network
+
+  #kapacitor:
+  #  image: library/kapacitor:latest
+  #  environment:
+  #   HOSTNAME: kapacitor
+  #  volumes:
+  #   - /etc/localtime:/etc/localtime:ro
+  #   - /srv/kapacitor/data:/var/lib/kapacitor
+  #   - /srv/kapacitor/config:/etc/kapacitor/
+  #  ports:
+  #   - 9092:9092
+  #  networks:
+  #   - metrics
+  #   - portainer_agent_network
+  #  command: kapacitord
+
+networks:
+    metrics:
+        driver: overlay
+  #  portainer_agent_network:
+  #      external: true
