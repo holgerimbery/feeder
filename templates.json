@@ -62,5 +62,20 @@
             "url": "https://github.com/holgerimbery/feeder-stack",
             "stackfile": "stacks/feeder-docker-tick-stack.yml"
         }
+	},
+    {
+        "type": 2,
+        "title": "feeder GIT ",
+        "description": "feeder GIT stack - grafana, influxdb, telegraf, (chronograf)",
+        "note": "feeder GIT stack",
+        "categories": [
+            "smarthome"
+        ],
+        "platform": "linux",
+        "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/registry.png",
+        "repository": {
+            "url": "https://github.com/holgerimbery/feeder-stack",
+            "stackfile": "stacks/git.yml"
+        }
 	}
 ]
